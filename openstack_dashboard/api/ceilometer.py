@@ -40,6 +40,7 @@ def meter_list(request, resource_id, user_id, project_id, source):
 
 
 def user_list(request):
+    # - the function name user_list is not unique
     """List the users."""
     users = ceilometerclient(request).users.list()
     return users
