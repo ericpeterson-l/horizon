@@ -11,7 +11,7 @@ LOG = logging.getLogger(__name__)
 
 def ceilometerclient(request):
     o = urlparse.urlparse(url_for(request, 'ceilometer'))
-    url = "://".join((o.cheme, o.netloc))
+    url = "://".join((o.scheme, o.netloc))
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     LOG.debug('ceilometerclient connection created using token "%s" and url "%s"'
               % (request.user.token.id, url))
