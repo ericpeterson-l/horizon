@@ -15,7 +15,7 @@ def ceilometerclient(request):
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     LOG.debug('ceilometerclient connection created using token "%s" and url "%s"'
               % (request.user.token.id, url))
-    return ceilometer_client('1', url, token=request.user.token.id,
+    return ceilometer_client.Client('1', url, token=request.user.token.id,
                              insecure=insecure)
 
 
